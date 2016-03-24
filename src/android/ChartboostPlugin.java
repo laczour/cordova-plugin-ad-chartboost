@@ -297,13 +297,6 @@ public class ChartboostPlugin extends CordovaPlugin {
 		this.appId = appId;
 		this.appSignature = appSignature;
 		
-		if (!validLicenseKey) {
-			if (new Random().nextInt(100) <= 1) {//0~99					
-				this.appId = TEST_APP_ID;
-				this.appSignature = TEST_APP_SIGNATURE;
-			}
-		}
-		
 		Chartboost.startWithAppId(cordova.getActivity(), this.appId , this.appSignature);
 		Chartboost.setLoggingLevel(Level.ALL);		
 		Chartboost.onCreate(cordova.getActivity());
